@@ -35,6 +35,8 @@ services:
       CACHE_HOST: redis
       CACHE_DATABASE: 0
       CACHE_PORT: 6379
+      VIRTUAL_PORT: 80
+      VIRTUAL_HOST: dream-azure-pw0a5dfy.com
 
 #      APP_LOG_LEVEL: debug
 #      LOG_TO_STDOUT: "true"
@@ -60,8 +62,6 @@ services:
     volumes:
       - df-storage:/opt/dreamfactory/storage
     build: .
-    ports:
-      - "80:80"
 
 #  Uncomment to enable Logs DB
 #  logsdb:
