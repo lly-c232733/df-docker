@@ -63,7 +63,7 @@ services:
       - df-storage:/opt/dreamfactory/storage
     build: .
     ports:
-      - "80:82"
+      - "82:80"
 #  Uncomment to enable Logs DB
 #  logsdb:
 #    image: mongo:4.0-xenial
