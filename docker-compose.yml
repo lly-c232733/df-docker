@@ -9,16 +9,16 @@ services:
     image: mysql:5.7
     volumes:
       - df-mysql:/var/lib/mysql
-      
+    network_mode: bridge      
   example_data:
     environment:
       DATASETS: pagila
       POSTGRES_PASSWORD: root_pw
-    image: aa8y/postgres-dataset    
-      
+    image: aa8y/postgres-dataset
+    network_mode: bridge
   redis:
     image: redis
-
+    network_mode: bridge
   web:
     depends_on:
       - mysql
@@ -64,6 +64,7 @@ services:
     build: .
     ports:
       - "82:80"
+    network_mode: bridge
 #  Uncomment to enable Logs DB
 #  logsdb:
 #    image: mongo:4.0-xenial
